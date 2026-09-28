@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commander — LZ Guitars</title>
-<meta name="description" content="Commandez une guitare sur mesure ou des goodies LZ Guitars.">
+<meta name="description" content="Configurez votre guitare sur mesure ou commandez des goodies LZ Guitars.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
@@ -26,14 +26,15 @@
 
 <section class="commande-hero">
   <div class="wrap">
-    <p class="eyebrow">Commande &amp; devis</p>
-    <h1>Passez commande</h1>
-    <p class="tagline">Guitare sur mesure ou petits goodies : décrivez votre projet, l'atelier vous répond directement par email.</p>
+    <p class="eyebrow">Commande &amp; configurateur</p>
+    <h1>Configurez votre guitare</h1>
+    <p class="tagline">Choisissez chaque détail de votre instrument, ou commandez des goodies. L'atelier reçoit votre demande directement par email.</p>
   </div>
 </section>
 
 <section class="commande-form-section">
-  <div class="wrap">
+  <div class="wrap commande-grid">
+
     <form id="commande-form" class="commande-form">
 
       <fieldset class="type-commande">
@@ -52,6 +53,188 @@
         </label>
       </fieldset>
 
+      <fieldset id="configurateur" class="configurateur">
+        <legend>Configuration de la guitare</legend>
+
+        <div class="champ">
+          <label for="forme">Forme du corps</label>
+          <select id="forme" name="forme">
+            <option>Superstrat (type shred)</option>
+            <option>Strat classique</option>
+            <option>Explorer / Flying V (metal)</option>
+            <option>Single cut (type LP)</option>
+            <option>Forme sur-mesure (à décrire ci-dessous)</option>
+          </select>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="bois-corps">Bois du corps</label>
+            <select id="bois-corps" name="bois-corps">
+              <option>Aulne</option>
+              <option>Frêne</option>
+              <option>Acajou</option>
+              <option>Tilleul</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="bois-manche">Bois du manche</label>
+            <select id="bois-manche" name="bois-manche">
+              <option>Érable</option>
+              <option>Acajou</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="touche">Touche</label>
+            <select id="touche" name="touche">
+              <option>Palissandre</option>
+              <option>Érable</option>
+              <option>Ébène</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="cordes">Nombre de cordes</label>
+            <select id="cordes" name="cordes">
+              <option>6 cordes</option>
+              <option>7 cordes</option>
+              <option>8 cordes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="finition">Finition / couleur</label>
+          <input type="text" id="finition" name="finition" placeholder="Ex : bleu-violet flammé, noir mat, naturel verni...">
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="micros">Micros</label>
+            <select id="micros" name="micros">
+              <option>Humbuckers (HH)</option>
+              <option>Simples (SSS)</option>
+              <option>HSH</option>
+              <option>Actifs type EMG</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="chevalet">Chevalet</label>
+            <select id="chevalet" name="chevalet">
+              <option>Fixe</option>
+              <option>Vibrato standard</option>
+              <option>Floyd Rose (flottant)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="hardware">Couleur de la quincaillerie</label>
+            <select id="hardware" name="hardware">
+              <option>Noir</option>
+              <option>Chrome</option>
+              <option>Or</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="frettes">Nombre de frettes</label>
+            <select id="frettes" name="frettes">
+              <option>22</option>
+              <option>24</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="diapason">Diapason (longueur de corde)</label>
+            <select id="diapason" name="diapason">
+              <option>25,5" (standard)</option>
+              <option>24,75" (plus court, cordes souples)</option>
+              <option>Multi-scale / baryton</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="reperes">Repères de touche</label>
+            <select id="reperes" name="reperes">
+              <option>Points classiques</option>
+              <option>Blocs</option>
+              <option>Aucun (touche nue)</option>
+              <option>Motif sur-mesure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="mecaniques">Mécaniques</label>
+            <select id="mecaniques" name="mecaniques">
+              <option>Standard</option>
+              <option>Verrouillables (locking)</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="sillet">Sillet</label>
+            <select id="sillet" name="sillet">
+              <option>Os</option>
+              <option>Graphite</option>
+              <option>Laiton</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="electronique">Configuration électronique</label>
+            <select id="electronique" name="electronique">
+              <option>1 volume + sélecteur</option>
+              <option>1 volume, 1 tonalité + sélecteur</option>
+              <option>2 volumes, 1 tonalité + sélecteur</option>
+              <option>Push-pull (coil-split)</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="pickguard">Pickguard</label>
+            <select id="pickguard" name="pickguard">
+              <option>Sans (corps nu)</option>
+              <option>Assorti à la finition</option>
+              <option>Contrastant (à préciser en couleur)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ-row">
+          <div class="champ">
+            <label for="sens">Droitier / gaucher</label>
+            <select id="sens" name="sens">
+              <option>Droitier</option>
+              <option>Gaucher</option>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="etui">Étui</label>
+            <select id="etui" name="etui">
+              <option>Gig bag (housse souple)</option>
+              <option>Flight case rigide</option>
+              <option>Sans étui</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="champ">
+          <label for="gravure">Gravure / incrustation personnalisée</label>
+          <input type="text" id="gravure" name="gravure" placeholder="Ex : initiales sur la touche, logo perso... (laisser vide si aucune)">
+        </div>
+      </fieldset>
+
+      <div class="champ">
+        <label for="description" id="label-description">Précisions supplémentaires</label>
+        <textarea id="description" name="description" rows="5" placeholder="Toute precision utile : inspiration, contraintes, delai souhaite..."></textarea>
+      </div>
+
       <div class="champ">
         <label for="nom">Nom et prénom</label>
         <input type="text" id="nom" name="nom" required>
@@ -68,18 +251,19 @@
       </div>
 
       <div class="champ">
-        <label for="description">Décrivez votre projet</label>
-        <textarea id="description" name="description" rows="6" placeholder="Modèle souhaité, bois, couleur, électronique, ou l'idée que vous avez en tête..." required></textarea>
-      </div>
-
-      <div class="champ">
         <label for="budget">Budget indicatif (optionnel)</label>
         <input type="text" id="budget" name="budget" placeholder="Ex : 800-1200€">
       </div>
 
       <button type="submit" class="btn btn-primary btn-submit">Envoyer la demande</button>
-      <p class="note-form">En envoyant, votre messagerie s'ouvre avec un email pré-rempli adressé directement à l'atelier (d.tenedios@gmail.com). Rien n'est débité : c'est une demande de devis, le paiement se règle ensuite directement avec le luthier.</p>
+      <p class="note-form">En envoyant, votre messagerie s'ouvre avec un email pré-rempli reprenant toute la configuration, adressé directement à l'atelier (d.tenedios@gmail.com). Rien n'est débité : c'est une demande de devis, le paiement se règle ensuite directement avec le luthier.</p>
     </form>
+
+    <aside class="recap" id="recap">
+      <h2>Récapitulatif</h2>
+      <dl id="recap-liste"></dl>
+    </aside>
+
   </div>
 </section>
 
@@ -90,23 +274,107 @@
 </footer>
 
 <script>
-document.getElementById('commande-form').addEventListener('submit', function (e) {
+var form = document.getElementById('commande-form');
+var configurateur = document.getElementById('configurateur');
+var labelDescription = document.getElementById('label-description');
+var recapListe = document.getElementById('recap-liste');
+
+var champsGuitare = [
+  ['forme', 'Forme du corps'],
+  ['bois-corps', 'Bois du corps'],
+  ['bois-manche', 'Bois du manche'],
+  ['touche', 'Touche'],
+  ['cordes', 'Cordes'],
+  ['finition', 'Finition / couleur'],
+  ['micros', 'Micros'],
+  ['chevalet', 'Chevalet'],
+  ['hardware', 'Quincaillerie'],
+  ['frettes', 'Frettes'],
+  ['diapason', 'Diapason'],
+  ['reperes', 'Repères de touche'],
+  ['mecaniques', 'Mécaniques'],
+  ['sillet', 'Sillet'],
+  ['electronique', 'Électronique'],
+  ['pickguard', 'Pickguard'],
+  ['sens', 'Droitier/gaucher'],
+  ['etui', 'Étui'],
+  ['gravure', 'Gravure / incrustation']
+];
+
+function typeSelectionne() {
+  return form.querySelector('input[name="type"]:checked').value;
+}
+
+function majAffichage() {
+  var estGuitare = typeSelectionne() === 'Guitare sur mesure';
+  configurateur.style.display = estGuitare ? '' : 'none';
+  labelDescription.textContent = estGuitare ? 'Précisions supplémentaires' : 'Décrivez votre demande';
+  document.getElementById('description').required = !estGuitare;
+  majRecap();
+}
+
+function majRecap() {
+  recapListe.innerHTML = '';
+  var ajouter = function (titre, valeur) {
+    if (!valeur) return;
+    var dt = document.createElement('dt');
+    dt.textContent = titre;
+    var dd = document.createElement('dd');
+    dd.textContent = valeur;
+    recapListe.appendChild(dt);
+    recapListe.appendChild(dd);
+  };
+
+  ajouter('Type', typeSelectionne());
+
+  if (typeSelectionne() === 'Guitare sur mesure') {
+    champsGuitare.forEach(function (c) {
+      var el = document.getElementById(c[0]);
+      ajouter(c[1], el.value);
+    });
+  }
+}
+
+form.querySelectorAll('input[name="type"]').forEach(function (r) {
+  r.addEventListener('change', majAffichage);
+});
+
+champsGuitare.forEach(function (c) {
+  document.getElementById(c[0]).addEventListener('input', majRecap);
+  document.getElementById(c[0]).addEventListener('change', majRecap);
+});
+
+majAffichage();
+
+form.addEventListener('submit', function (e) {
   e.preventDefault();
-  var type = this.querySelector('input[name="type"]:checked').value;
+  var type = typeSelectionne();
   var nom = document.getElementById('nom').value;
   var email = document.getElementById('email').value;
   var telephone = document.getElementById('telephone').value;
   var description = document.getElementById('description').value;
   var budget = document.getElementById('budget').value;
 
-  var sujet = 'Demande de commande LZ Guitars - ' + type;
-  var corps = 'Type de commande : ' + type + '\n' +
-    'Nom : ' + nom + '\n' +
+  var corps = 'Type de commande : ' + type + '\n';
+
+  if (type === 'Guitare sur mesure') {
+    corps += '\nConfiguration :\n';
+    champsGuitare.forEach(function (c) {
+      var el = document.getElementById(c[0]);
+      if (el.value) corps += '- ' + c[1] + ' : ' + el.value + '\n';
+    });
+  }
+
+  corps += '\nNom : ' + nom + '\n' +
     'Email : ' + email + '\n' +
     'Téléphone : ' + (telephone || 'non renseigné') + '\n' +
-    'Budget indicatif : ' + (budget || 'non renseigné') + '\n\n' +
-    'Description du projet :\n' + description;
+    'Budget indicatif : ' + (budget || 'non renseigné') + '\n';
 
+  if (description) {
+    corps += '\nPrécisions :\n' + description;
+  }
+
+  var sujet = 'Demande de commande LZ Guitars - ' + type;
   var lien = 'mailto:d.tenedios@gmail.com?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
   window.location.href = lien;
 });

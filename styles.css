@@ -294,12 +294,89 @@ a { color: inherit; text-decoration: none; }
   padding: 70px 0 100px;
 }
 
+.commande-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 40px;
+  align-items: start;
+}
+
 .commande-form {
-  max-width: 620px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.configurateur {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.configurateur legend {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  color: var(--accent-bright);
+  padding: 0 6px;
+}
+
+.champ-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.champ select {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 12px 14px;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  min-height: 44px;
+}
+
+.champ select:focus {
+  outline: none;
+  border-color: var(--accent-bright);
+}
+
+.recap {
+  position: sticky;
+  top: 96px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.recap h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.recap dl { display: flex; flex-direction: column; gap: 4px; }
+
+.recap dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-dim);
+  margin-top: 12px;
+}
+
+.recap dd { font-size: 0.95rem; }
+
+@media (max-width: 860px) {
+  .commande-grid { grid-template-columns: 1fr; }
+  .recap { position: static; order: -1; }
+  .champ-row { grid-template-columns: 1fr; }
 }
 
 .type-commande {
