@@ -429,18 +429,20 @@ var constructeursCorps = {
     return s;
   },
   'Strat classique': function () {
+    /* Proportions inspirees d'une photo de reference (corne courte a droite,
+       longue corne a gauche, taille tres pincee, gros bout inferieur) */
     var s = new THREE.Shape();
-    s.moveTo(0.5, 1.95);
-    s.bezierCurveTo(0.95, 1.9, 1.2, 1.5, 1.15, 1.0);
-    s.bezierCurveTo(1.1, 0.6, 0.8, 0.5, 0.8, 0.1);
-    s.bezierCurveTo(0.8, -0.25, 1.35, -0.35, 1.4, -1.0);
-    s.bezierCurveTo(1.45, -1.7, 0.8, -2.25, 0.0, -2.3);
-    s.bezierCurveTo(-0.75, -2.25, -1.3, -1.75, -1.3, -1.1);
-    s.bezierCurveTo(-1.3, -0.55, -0.9, -0.45, -0.9, -0.05);
-    s.bezierCurveTo(-0.9, 0.4, -1.3, 0.55, -1.35, 1.1);
-    s.bezierCurveTo(-1.4, 1.65, -1.0, 2.05, -0.4, 2.1);
-    s.bezierCurveTo(-0.08, 2.12, 0.08, 1.92, 0.1, 1.6);
-    s.bezierCurveTo(0.12, 1.35, 0.26, 1.4, 0.5, 1.95);
+    s.moveTo(0.35, 2.15);
+    s.bezierCurveTo(0.75, 2.1, 1.0, 1.75, 0.95, 1.25);
+    s.bezierCurveTo(0.9, 0.8, 0.55, 0.65, 0.5, 0.15);
+    s.bezierCurveTo(0.45, -0.35, 1.15, -0.55, 1.35, -1.3);
+    s.bezierCurveTo(1.5, -1.95, 0.9, -2.55, 0.0, -2.6);
+    s.bezierCurveTo(-0.85, -2.55, -1.35, -1.95, -1.3, -1.25);
+    s.bezierCurveTo(-1.25, -0.6, -0.75, -0.4, -0.7, 0.05);
+    s.bezierCurveTo(-0.65, 0.5, -1.1, 0.75, -1.2, 1.35);
+    s.bezierCurveTo(-1.3, 1.95, -0.9, 2.35, -0.15, 2.35);
+    s.bezierCurveTo(0.05, 2.35, 0.14, 2.1, 0.12, 1.75);
+    s.bezierCurveTo(0.1, 1.5, 0.2, 1.55, 0.35, 2.15);
     return s;
   },
   'Explorer / Flying V (metal)': function () {
@@ -569,15 +571,15 @@ function majModele3D() {
 
   var matManche = new THREE.MeshStandardMaterial({ color: couleurManche, roughness: 0.55 });
 
-  var geoManche = new THREE.CylinderGeometry(0.16, 0.24, 3.7, 4, 1, false, Math.PI / 4);
+  var geoManche = new THREE.CylinderGeometry(0.16, 0.22, 2.6, 4, 1, false, Math.PI / 4);
   geoManche.scale(1, 1, 0.55);
   var manche = new THREE.Mesh(geoManche, matManche);
-  manche.position.set(0.02, 2.55, 0.04);
+  manche.position.set(0.02, 2.6, 0.04);
   groupeGuitare.add(manche);
 
   var tete = new THREE.Mesh(construireTeteManche(), matManche);
   tete.scale.set(0.85, 0.85, 1);
-  tete.position.set(0.02, 4.65, -0.02);
+  tete.position.set(0.02, 4.0, -0.02);
   tete.rotation.x = -0.18;
   groupeGuitare.add(tete);
 
@@ -598,7 +600,7 @@ function majModele3D() {
   for (var m = 0; m < 6; m++) {
     var mecanique = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.3, 10), matHardware);
     mecanique.rotation.x = Math.PI / 2;
-    mecanique.position.set(0.46, 5.3 - m * 0.27, -0.02);
+    mecanique.position.set(0.46, 4.65 - m * 0.27, -0.02);
     groupeGuitare.add(mecanique);
   }
 
