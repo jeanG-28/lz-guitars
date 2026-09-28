@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander — LZ Guitars</title>
+<meta name="description" content="Commandez une guitare sur mesure ou des goodies LZ Guitars.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo">LZ <span>Guitars</span></a>
+    <nav class="nav">
+      <a href="index.html#modeles">Modèles</a>
+      <a href="index.html#histoire">L'atelier</a>
+      <a href="commander.html">Commander</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="commande-hero">
+  <div class="wrap">
+    <p class="eyebrow">Commande &amp; devis</p>
+    <h1>Passez commande</h1>
+    <p class="tagline">Guitare sur mesure ou petits goodies : décrivez votre projet, l'atelier vous répond directement par email.</p>
+  </div>
+</section>
+
+<section class="commande-form-section">
+  <div class="wrap">
+    <form id="commande-form" class="commande-form">
+
+      <fieldset class="type-commande">
+        <legend>Type de commande</legend>
+        <label class="radio-card">
+          <input type="radio" name="type" value="Guitare sur mesure" checked>
+          <span>Guitare sur mesure</span>
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="type" value="Goodies">
+          <span>Goodies (stickers, médiators, textile...)</span>
+        </label>
+        <label class="radio-card">
+          <input type="radio" name="type" value="Autre / je ne sais pas encore">
+          <span>Autre / je ne sais pas encore</span>
+        </label>
+      </fieldset>
+
+      <div class="champ">
+        <label for="nom">Nom et prénom</label>
+        <input type="text" id="nom" name="nom" required>
+      </div>
+
+      <div class="champ">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="champ">
+        <label for="telephone">Téléphone (optionnel)</label>
+        <input type="tel" id="telephone" name="telephone">
+      </div>
+
+      <div class="champ">
+        <label for="description">Décrivez votre projet</label>
+        <textarea id="description" name="description" rows="6" placeholder="Modèle souhaité, bois, couleur, électronique, ou l'idée que vous avez en tête..." required></textarea>
+      </div>
+
+      <div class="champ">
+        <label for="budget">Budget indicatif (optionnel)</label>
+        <input type="text" id="budget" name="budget" placeholder="Ex : 800-1200€">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-submit">Envoyer la demande</button>
+      <p class="note-form">En envoyant, votre messagerie s'ouvre avec un email pré-rempli adressé directement à l'atelier (d.tenedios@gmail.com). Rien n'est débité : c'est une demande de devis, le paiement se règle ensuite directement avec le luthier.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>LZ Guitars &middot; Saint-Prest, France &middot; Guitares électriques faites main depuis 2014</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('commande-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var type = this.querySelector('input[name="type"]:checked').value;
+  var nom = document.getElementById('nom').value;
+  var email = document.getElementById('email').value;
+  var telephone = document.getElementById('telephone').value;
+  var description = document.getElementById('description').value;
+  var budget = document.getElementById('budget').value;
+
+  var sujet = 'Demande de commande LZ Guitars - ' + type;
+  var corps = 'Type de commande : ' + type + '\n' +
+    'Nom : ' + nom + '\n' +
+    'Email : ' + email + '\n' +
+    'Téléphone : ' + (telephone || 'non renseigné') + '\n' +
+    'Budget indicatif : ' + (budget || 'non renseigné') + '\n\n' +
+    'Description du projet :\n' + description;
+
+  var lien = 'mailto:d.tenedios@gmail.com?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(corps);
+  window.location.href = lien;
+});
+</script>
+
+</body>
+</html>
